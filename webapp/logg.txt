@@ -1,0 +1,16 @@
+step 9 1:08:24 
+
+ui5 serve
+
+{
+  "name": "sap-ui5-walkthrough",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
