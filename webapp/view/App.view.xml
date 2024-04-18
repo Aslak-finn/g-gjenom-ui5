@@ -9,17 +9,26 @@
             <pages>
                 <Page title="{i18n>homePageTitle}">
                     <content>
-                        <Panel headerText="{i18n>helloPanelTitle}">
+                        <Panel
+                            headerText="{i18n>helloPanelTitle}"
+                            class="sapUiResponsiveMargin"
+                            width="auto"
+                        >
                             <content>
                                 <Button
                                     text="{i18n>showHelloButtonText}"
                                     press=".onShowHello"
+                                    class="sapUiSmallMarginEnd"
                                 />
                                 <Input
                                     value="{/recipient/name}"
-                                    description="Hello {/recipient/name}"
+                                    description="Hello {/recipient/name }"
                                     valueLiveUpdate="true"
                                     width="60%"
+                                />
+                                <Text
+                                    text="Hello {/recipient/name}"
+                                    class="sapUiSmallMargin"
                                 />
                             </content>
                         </Panel>
@@ -29,31 +38,3 @@
         </App>
     </Shell>
 </mvc:View>
-<!-- DETTE er hvordan Step 11: Pages and Panels skulle være limte inn feil fra dokumentasjonen til UI5-->
-<!-- <mvc:View
-    controllerName="sap.ui.demo.walkthrough.controller.App"
-   xmlns="sap.m"
-   xmlns:mvc="sap.ui.core.mvc"
-  displayBlock="true">
-   <App>
-      <pages>
-         <Page title="{i18n>homePageTitle}">
-            <content>
-               <Panel
-                  headerText="{i18n>helloPanelTitle}">
-                  <content>
-                     <Button
-                        text="{i18n>showHelloButtonText}"
-                        press=".onShowHello"/>
-                     <Input
-                        value="{/recipient/name}"
-                        description="Hello {/recipient/name}"
-                        valueLiveUpdate="true"
-                        width="60%"/>
-                  </content>
-               </Panel>
-            </content>
-         </Page>
-      </pages>
-   </App>
-</mvc:View> -->
