@@ -1,21 +1,24 @@
 sap.ui.define([
     "sap/ui/core/mvc/Controller",
     "sap/m/MessageToast"
-], function (Controller, MessageToast) {
-    'use strict';
-    return Controller.extend("sap.ui.demo.walkthrough.controller.HelloPanel", {
-        onShowHello: function () {
+], (Controller, MessageToast) => {
+    "use strict";
+
+    return Controller.extend("ui5.walkthrough.controller.HelloPanel", {
+        onShowHello() {
             // read msg from i18n model
-            var oBundle = this.getView().getModel("i18n").getResourceBundle();
-            var sRecipient = this.getView().getModel().getProperty("/recipient/name");
-            var sMsg = oBundle.getText("helloMsg", [sRecipient]);
-            // Show message
+            const oBundle = this.getView().getModel("i18n").getResourceBundle();
+            const sRecipient = this.getView().getModel().getProperty("/recipient/name");
+            const sMsg = oBundle.getText("helloMsg", [sRecipient]);
+
+            // show message
             MessageToast.show(sMsg);
         },
+
         async onOpenDialog() {
             // create dialog lazily
             this.oDialog ??= await this.loadFragment({
-                name: "sap.ui.demo.walkthrough.view.HelloDialog"
+                name: "ui5.walkthrough.view.HelloDialog"
             });
 
             this.oDialog.open();
